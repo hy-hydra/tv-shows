@@ -1,0 +1,22 @@
+// Helpers
+@import './helpers/mixins'; /* Mixins */
+@import './helpers/variables'; /* variables */
+
+@import './base/common'; /* Common css */
+
+// Components
+@import './components/header'; /* Header */
+@import './components/footer'; /* Footer */
+@import './components/buttons'; /* Buttons */
+@import './components/pagination'; /* Pagination */
+
+@import './components/movie-header'; /* Movie Header */
+
+// Pages
+@import './pages/home'; /* Home */
+@import './pages/movie-details'; /* Movie Details */
+
+// Page Components
+@import './components/movie-card'; /* Movie Card */
+@import './pages/details/seasons'; /* Seasons Info */
+@import './pages/details/cast'; /* Cast */

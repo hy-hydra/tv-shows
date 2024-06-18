@@ -1,0 +1,127 @@
+// Tv Shows - Season Info
+.cf_tv-season {
+
+    padding-bottom: 30px;
+
+    &__select {
+        position: relative;
+        margin-bottom: 30px;
+
+        &-current {
+            background-color: #34495e;
+            padding: 10px 26px;
+            @include fontStyle(600, 16, 20, $white);
+            letter-spacing: 0.4px;
+            border-radius: 5px;
+            @include flexCenter;
+
+            svg {
+                width: 10px;
+                display: flex;
+                margin-left: 10px;                
+            }
+        }
+    }
+
+    &__list {
+        background-color: #34495e;
+        border-radius: 5px;
+        position: absolute;
+        margin-top: 5px;
+        z-index: 5;
+
+        li {
+            cursor: pointer;
+            padding: 10px 26px;
+            @include fontStyle(400, 14, 18, $white);
+            letter-spacing: 0.4px;
+        }
+    }
+
+    &__section {
+        &-content {
+            padding: 20px 0 50px;
+            border-bottom: 1px solid rgba($white_theme, 0.4);
+            .cf_single-movie__credits {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    // Tabs
+    &__tabs {
+        ul {
+            display: flex;
+        }
+        li {
+            @include fontStyle(600, 18, 24, $white);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+
+            &.active {
+                border-bottom-color: $white;
+            }
+        }
+    }
+
+    // Episode
+    &__episode {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: rgba(#34495e, 0.2);
+
+        &-list {
+
+            h4 {
+                color: $white_theme;
+                margin-bottom: 20px;
+            }
+            ul {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 25px;
+            }
+
+        }
+
+        // Single Episode
+        &-image {
+            padding-bottom: 56.25%;
+            height: 0;
+            position: relative;
+
+            img {
+                @include square(100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .cf_single-movie__votes {
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        &-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+
+            h5 {
+                color: $white_theme;
+                margin-bottom: 5px;
+                letter-spacing: 0.5px;
+            }
+
+            .cf_single-movie__time {
+                p {
+                    @include mediaFontStyle(12, 16);
+                }
+            }
+        }
+    }
+    
+}

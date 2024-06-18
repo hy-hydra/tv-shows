@@ -1,0 +1,49 @@
+// Pagination
+
+.cf_pagination {
+
+    padding: 20px 0;
+
+    ul {
+        @include flexCenterCenter;
+    }
+    
+    li {
+        margin: 0 5px;
+    }
+
+    &-link {
+        padding: 5px 10px;
+        @include fontStyle(400, 14, 18, $black);
+        border-radius: 3px;
+        transition: 0.25s linear;
+        @include flexCenterCenter;
+        cursor: pointer;
+
+        &-active, &:hover {
+            background-color: #50abff;
+            color: $white;
+        }
+
+        &-disabled {
+            opacity: 0.7;
+            pointer-events: none;
+        } 
+        
+        &-previous, &-next {
+            @include square(28px);
+            background-color: #34495e;
+            padding: 5px 7px;
+            svg {
+                width: 12px;
+            }
+        }
+
+        &-previous {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    
+}

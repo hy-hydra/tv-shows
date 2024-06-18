@@ -1,0 +1,27 @@
+// Movie Header
+
+.cf_header-movie {
+    height: 90vh;
+    position: relative;
+
+    &__bg {
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include square(100%);
+    }
+
+    &__info {
+        height: 100%;
+        position: relative;
+
+        h1 {
+            @include mediaFontStyle(46, 56);
+            font-weight: 400;
+            color: $white_theme;
+        }
+    }
+
+}

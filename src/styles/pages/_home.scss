@@ -1,0 +1,26 @@
+// Home
+.cf_movies-sec {
+    padding: 30px 0;
+    
+    &__header {
+        @include flexCenterBetween;
+        padding: 15px 0;
+
+        &-view {
+            @include flexCenter;
+            @include fontStyle(400, 14, 18, $black);
+            
+            svg {
+                margin-left: 10px;
+                width: 12px;
+                display: flex;
+            }
+        }
+    }
+
+    &__group {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+    }
+}

@@ -1,0 +1,135 @@
+// Header
+header {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    background-color: $white;
+    z-index: 5;
+}
+
+.cf_logo {
+    margin-right: 100px;
+}
+
+.cf_header {
+    @include flexCenterBetween;
+    padding: 15px 0;
+    position: relative;
+    // overflow: hidden;
+
+    &-logo {
+        max-width: 180px;
+    }
+
+    nav {
+        @include flexCenter;
+
+        li {
+            margin-right: 20px;
+            a {
+                @include fontStyle(600, 16, 20, $black);
+                padding: 5px 20px;
+            }
+        }
+    }
+
+    .cf_search-movie {
+        position: relative;
+        max-width: 400px;
+        width: 100%;
+        @include flexCenter;
+        justify-content: flex-end;
+
+        &__icon {
+            display: block;
+            cursor: pointer;
+            svg {
+                @include square(20px);
+            }
+        }
+
+        &__input { 
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 0;
+            overflow: hidden;
+            transition: 0.3s linear;
+
+            &.active {
+                right: 0;
+                width: 400px;
+            }
+            
+            input {      
+                @include fontStyle(400, 14, 18, $black);
+                padding: 10px 60px 10px 20px;
+                border-radius: 4px;
+                background-color: $white;
+                border: 1px solid #bdc3c7;
+                outline: none;
+                width: 100%;
+                display: block;
+            }
+
+            span {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                display: flex;
+                svg {
+                    @include square(14px);
+                }
+            }
+
+        }
+
+        &__results {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 400px;
+            z-index: 5;
+            background-color: $white;
+            max-height: 300px;
+            padding: 10px 0;
+            overflow-y: auto;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+
+            li {
+                @include flexCenter;
+                padding: 5px 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $white_theme;
+                }
+
+                .cf_search-movie {
+                    &__image {
+                        @include square(40px);
+                        margin-right: 15px;
+
+                        img {
+                            object-fit: cover;
+                            @include square(100%);
+                        }
+                    }
+
+                    &__info {
+                        p { 
+                            @include fontStyle(600, 14, 18, $black);                            
+                        }
+                        span {
+                            color: #bdc3c7;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

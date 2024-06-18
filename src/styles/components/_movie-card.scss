@@ -1,0 +1,74 @@
+
+// Movie Card
+.cf_movie-card {
+    cursor: pointer;
+    position: relative;
+    // overflow: hidden;
+    border-radius: 10px;
+    
+    &:hover {
+        &:before {
+            content: '';
+            height: 100px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom, $black, transparent);
+            transition: 0.25s linear;
+            border-radius: 10px;
+        }
+        
+        .cf_movie-card__rating {
+            opacity: 1;
+        }
+    }
+
+    &__rating {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        padding: 0 10px;
+        opacity: 0;
+        transition: 0.25s linear;
+        @include flexCenterBetween;
+        width: 100%;
+
+        p {
+            @include fontStyle(600, 14, 18, $white);
+        }
+        
+        span {
+            background-color: #f5c518;
+            padding: 3px 10px;
+            display: inline-block;
+            border-radius: 5px;
+            @include fontStyle(600, 12, 16, $black);
+        }
+    }
+    
+    &__image {
+        border-radius: 10px;
+        height: 300px;
+        overflow: hidden;
+        font-size: 0;
+        box-shadow: 0 20px 30px -5px rgba($black, 0.1) , 0 10px 10px -5px rgba($black, 0.4) ;
+
+        img {
+            max-height: 300px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        padding: 15px 20px;
+        text-align: center;
+
+        p {
+            padding-top: 5px;
+            @include fontStyle(600, 12, 16, #34495e);
+            letter-spacing: 0.2px;
+        }
+    }
+}
